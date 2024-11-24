@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.rtl input,
+.rtl select,
+.rtl textarea {
+  text-align: right;
+}
+
+.rtl .react-multi-date-picker input {
+  text-align: right;
+}
+
+
+
+/* Add this to your global CSS or a CSS module */
+
+.input-container {
+  position: relative;
+}
+
+.input-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transition: all 0.3s ease;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.input:focus + .input-placeholder {
+  top: -10px; /* Moves placeholder up */
+  color: #4b4b4b; /* Change color on focus */
+  font-size: 0.875rem; /* Optionally reduce the font size */
+}
+
+.input:focus + .input-placeholder,
+.input:not(:placeholder-shown) + .input-placeholder {
+  top: -10px; /* Moves placeholder up even if there's text */
+  color: #4b4b4b;
+  font-size: 0.875rem; /* Adjust the size when there's text */
+}
